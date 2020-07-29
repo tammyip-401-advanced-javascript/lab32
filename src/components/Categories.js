@@ -1,24 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import * as actions from './StoreActionAPI';
 
 function Categories(props) {
+    const { categories, getCategories } = props
+    useEffect(() => {
+        getCategories()
+    }, [getCategories])
+
     let categoryHTML = [];
 
-    for (let i = 0; i < props.categories.length; i++) {
-        let category = props.categories[i];
-        categoryHTML.push(
-            <button
-                key={i}
-                onClick={() => {
-                    props.dispatch({
-                        type: 'SET_CURRENT_CATEGORY',
-                        payload: props.categories[i].name,
-                    });
-                }}
-            >
-                {category.displayName || category.name}
-            </button>,
-        );
+    if (categories) {
+        for (let i = 0; i < categories.length; i++) {
+            let category = categories[i];
+            categoryHTML.push(
+                <button
+                    key={i}
+                    onClick={() => {
+                        props.setCurrentCategories({
+                            type: 'SET_CURRENT_CATEGORY',
+                            payload: category.name,
+                        });
+                    }}
+                >
+                    {category.displayName || category.name}
+                </button>,
+            );
+        }
     }
 
     return (
@@ -30,7 +38,13 @@ function Categories(props) {
 }
 
 const mapStateToProps = (state) => ({
-    categories: state.categories,
+    categories: state.reducer.categories,
+    currentCategory: state.reducer.currentCategory,
 });
 
-export default connect(mapStateToProps)(Categories);
+const mapDispatchToProps = (dispatch) => ({
+    getCategories: () => dispatch(actions.getCategories()),
+    setCurrentCategories: (payload) => dispatch(actions.setCurrentCategories(payload)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Categories);

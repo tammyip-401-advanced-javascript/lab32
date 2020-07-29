@@ -1,14 +1,12 @@
 # lab32
 
-# lab31
-
 Project Name: Redux - Asynchronous Actions
 
 Author: Tammy Ip
 
 Links and Resources (see below)
-submission PR: `https://github.com/tammyip-401-advanced-javascript/lab31/pull/1`
-Netlify: `https://401n16lab31.netlify.app/`
+submission PR: `https://github.com/tammyip-401-advanced-javascript/lab32/pull/1`
+Netlify: `https://401n16lab32.netlify.app/`
 
 
 Documentation
@@ -30,4 +28,4 @@ Setup
 
 
 UML
-https://docs.google.com/spreadsheets/d/1KmUI0TJXwwJX2I5XoBvJnPBklgNFLJ5Zs3qjST5AZnY/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1NLTv0O0xHdRVxgQxe4ghfCVLZhiRPrlZMPeuJU_Ly0M/edit?usp=sharing

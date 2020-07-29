@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import {
+  BrowserRouter as Router, Link
+} from "react-router-dom";
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
@@ -14,34 +17,34 @@ function Cart(props) {
 
   let cartHTML = [];
 
-  props.cart.forEach((cartItem) => {
-    cartHTML.push(
-      <Grid
-        container
-        direction="row"
-        justify="flex-end"
-        alignItems="flex-end"
-      >
-        <div>
-          {cartItem.name}
-        </div>
-        <button id='remove'
-          onClick={(e) => {
-            props.dispatch({
-              type: 'REMOVE_FROM_CART',
-              payload: cartItem,
-            })
-          }}
-        > Remove
+  if (props.cart) {
+    props.cart.forEach((cartItem) => {
+      cartHTML.push(
+        <Grid
+          container
+          direction="row"
+          justify="flex-end"
+          alignItems="flex-end"
+        >
+          <div>
+            {cartItem.name}
+          </div>
+          <button id='remove'
+            onClick={(e) => {
+              props.dispatch({
+                type: 'REMOVE_FROM_CART',
+                payload: cartItem,
+              })
+            }}
+          > Remove
            </button>
-
-      </Grid>
-    )
-  })
-
+        </Grid>
+      )
+    })
+  }
   return (
     <>
-      <div id='cart'
+      <Link to="/cart"> <div id='cart'
       // console.log(cartMenu)
       //   if (item.length === 0) {
       //     setItem(cartHTML)
@@ -49,7 +52,7 @@ function Cart(props) {
       //     setItem([]);
       //   }
       // }}
-      >Your Cart {props.cartCount}</div>
+      >Your Cart {props.cartCount}</div></Link>
       {/* {cartMenu ? cartHTML : null} */}
       {/* {cartHTML} */}
       <Grid
@@ -79,7 +82,6 @@ function Cart(props) {
 const mapStateToProps = (state) => ({
   cartCount: state.cartCount,
   cart: state.cart,
-  drawer: state.cart.drawer,
 });
 
 // export default Header;

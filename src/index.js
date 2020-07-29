@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import App from './App';
-import store from './store';
+import store from './index2';
 
 function Main() {
     // Wrap our entire application in a provider,
@@ -18,3 +18,5 @@ function Main() {
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(<Main />, rootElement);
+
+
