@@ -5,7 +5,7 @@ Project Name: Virtual Store Phase 4
 Author: Tammy Ip
 
 Links and Resources (see below)
-submission PR: `https://github.com/tammyip-401-advanced-javascript/lab32/pull/1`
+submission PR: `https://github.com/tammyip-401-advanced-javascript/lab32/pull/2`
 Netlify: `https://401n16lab33.netlify.app/`
 
 
