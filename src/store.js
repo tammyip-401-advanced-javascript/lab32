@@ -2,9 +2,9 @@ import { createStore } from 'redux';
 
 const initState = {
     categories: [
-        // { name: 'Electronics', display_name: 'Electronics' },
-        // { name: 'Clothing', display_name: 'Clothing' },
-        // { name: 'Supplements', display_name: 'Supplements' },
+        { name: 'Electronics', display_name: 'Electronics' },
+        { name: 'Clothing', display_name: 'Clothing' },
+        { name: 'Supplements', display_name: 'Supplements' },
     ],
     products: [
         // { name: 'Facial Steamer', category: 'Electronics', price: 199.0, inStock: 5, description: 'a simple beauty device that emits steam' },
@@ -33,9 +33,15 @@ const reducer = (state = initState, action) => {
             newState.currentCategory = payload.payload;
             break;
         case 'ADD_TO_CART':
-            // console.log(payload)
             newState.cart.push(payload);
             newState.cartCount++;
+            //if the name of product in Redux is equal to the product in API, then decrease the inStock property
+            for (var i = 0; i < newState.products.length; i++) {
+                if (newState.products[i]._id === payload._id) {
+                    let newInStock = newState.products[i].inStock - 1;
+                    newState.products[i].inStock = newInStock;
+                }
+            }
             break;
         case 'REMOVE_FROM_CART':
             newState.cartCount--;
@@ -58,6 +64,7 @@ const reducer = (state = initState, action) => {
             console.log(newState.activeProduct)
             break;
         case 'GET_PRODUCTS':
+            console.log(payload)
             newState.products = payload;
             break;
         case 'GET_CATEGORIES':

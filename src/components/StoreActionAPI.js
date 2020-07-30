@@ -30,6 +30,7 @@ export const getProducts = () => async (dispatch) => {
 };
 
 const realGetProducts = (payload) => {
+  console.log(payload)
   return {
     type: 'GET_PRODUCTS',
     payload,
@@ -37,6 +38,7 @@ const realGetProducts = (payload) => {
 };
 
 export const addtoCart = (product) => async (dispatch) => {
+  console.log(product)
   let results = await axios.put(
     `https://js401n16-lab31.herokuapp.com/api/v1/products/${product._id}`,
     {
@@ -44,6 +46,7 @@ export const addtoCart = (product) => async (dispatch) => {
       inStock: product.inStock - 1,
     },
   );
+  console.log(results)
   dispatch(AddToCartAction(results.data));
 };
 

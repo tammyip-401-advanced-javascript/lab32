@@ -22,6 +22,8 @@ Setup
 <!-- + npm install react-bootstrap bootstrap -->
 + npm install react-redux redux
 + npm install @material-ui/core
++ npm install axios
++ npm install redux-thunk
 + start server with npm start
 
 + do npm run build to generate the build file for deployment

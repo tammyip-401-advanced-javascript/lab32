@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 
 
 function Cart(props) {
+  console.log(props)
   const list = (
     <div
       onClick={() => props.dispatch({ type: 'TOGGLE_DRAWER', payload: false })}
@@ -52,7 +53,7 @@ function Cart(props) {
       //     setItem([]);
       //   }
       // }}
-      >Your Cart {props.cartCount}</div></Link>
+      >Checkout / Your Cart {props.cartCount}</div></Link>
       {/* {cartMenu ? cartHTML : null} */}
       {/* {cartHTML} */}
       <Grid
@@ -80,8 +81,8 @@ function Cart(props) {
 }
 
 const mapStateToProps = (state) => ({
-  cartCount: state.cartCount,
-  cart: state.cart,
+  cartCount: state.reducer.cartCount,
+  cart: state.reducer.cart,
 });
 
 // export default Header;

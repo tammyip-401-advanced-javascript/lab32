@@ -155,9 +155,8 @@ function Checkout(props) {
 }
 
 const mapStateToProps = (state) => ({
-  cartCount: state.cartCount,
-  cart: state.cart,
-  drawer: state.cart.drawer,
+  cartCount: state.reducer.cartCount,
+  cart: state.reducer.cart,
 });
 
 export default connect(mapStateToProps)(Checkout);
