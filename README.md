@@ -1,12 +1,12 @@
-# lab32
+# lab33
 
-Project Name: Redux - Asynchronous Actions
+Project Name: Virtual Store Phase 4
 
 Author: Tammy Ip
 
 Links and Resources (see below)
 submission PR: `https://github.com/tammyip-401-advanced-javascript/lab32/pull/1`
-Netlify: `https://401n16lab32.netlify.app/`
+Netlify: `https://401n16lab33.netlify.app/`
 
 
 Documentation
@@ -30,4 +30,5 @@ Setup
 
 
 UML
-https://docs.google.com/spreadsheets/d/1NLTv0O0xHdRVxgQxe4ghfCVLZhiRPrlZMPeuJU_Ly0M/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1Aq2Ofq2bfKmHfCWfFQzeQH2XpqG5m3qB3MC4NVMm9bw/edit?usp=sharing
+
